@@ -13,7 +13,7 @@ public class Main {
 
 	
 	public static int[][] squareArr = {
-			{2,7,6},
+			{1,1,6},
 			{9,5,1},
 			{4,3,8},
 	};
@@ -43,7 +43,17 @@ public class Main {
 	
 	static int[] sumOfEachColumn(int[][] square, int c)
 	{
-		return null;
+            int[] colsums = new int[square.length];
+		
+            for(int col=0; col<square.length;col++){
+		for(int row=0; row<square.length; row++){
+                int rowValue = square[row][col];
+                colsums[col] = colsums[col] + rowValue;
+            }
+		}
+                
+                
+		return colsums;
 		
 	}
 	
@@ -75,8 +85,16 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    	sumOfEachRow(squareArr);
-    	
+    	int[] rowsum=sumOfEachRow(squareArr);
+        for(int g : rowsum)
+        {
+            System.out.println(g);
+        }
+    	int[] colsum=sumOfEachColumn(squareArr,0);
+        for(int g : colsum)
+        {
+            System.out.println(g);
+        }
     	
     	
     }
