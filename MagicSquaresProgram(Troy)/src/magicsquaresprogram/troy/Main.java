@@ -76,7 +76,7 @@ public class Main {
 	{
 		int aDiagsums = 0;
 		int diag2=square.length-1;
-		while(diag2!=0)
+		while(diag2!=-1)
 		{
         for(int diag=0; diag<square.length;diag++){
             int aDiagValue = square[diag][diag2];
