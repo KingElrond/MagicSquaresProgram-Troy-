@@ -60,14 +60,32 @@ public class Main {
 	
 	static int sumOfDescendingDiagonal(int[][] square)
 	{
-		return 0;
+		int dDiagsums = 0;
+		
+        for(int diag=0; diag<square.length;diag++){
+            int dDiagValue = square[diag][diag];
+            dDiagsums = dDiagsums + dDiagValue;
+	
+        }
+		return dDiagsums;
 		
 	}
 	
 	
 	static int sumOfAscendingDiagonal(int[][] square)
 	{
-		return 0;
+		int aDiagsums = 0;
+		int diag2=square.length-1;
+		while(diag2!=0)
+		{
+        for(int diag=0; diag<square.length;diag++){
+            int aDiagValue = square[diag][diag2];
+            aDiagsums = aDiagsums + aDiagValue;
+            diag2--;
+        }
+        
+		}
+		return aDiagsums;
 		
 	}
 	
@@ -96,6 +114,11 @@ public class Main {
             System.out.println(g);
         }
     	
+        int aDsum = sumOfAscendingDiagonal(squareArr);
+        int dDsum = sumOfDescendingDiagonal(squareArr);
+        System.out.println(dDsum);
+        System.out.println(aDsum);
+        
     	
     }
     
